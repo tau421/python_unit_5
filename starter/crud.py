@@ -16,8 +16,8 @@ def get_users():
     return User.query.all()
 
 def get_user_by_id(user_id):
-    user_id = User.query.get(user_id)
-    return user_id
+    
+    return User.query.get(user_id)
 
 def get_user_by_email(email):
 

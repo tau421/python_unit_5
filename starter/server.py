@@ -71,7 +71,7 @@ def process_login():
 
     email = request.form.get("email")
     password = request.form.get("password")
-    user = crud.get_user_by_email(user)
+    user = crud.get_user_by_email(email)
 
     if not user or user.password != password:
         flash("Incorrect log-in information.  Please try again.")

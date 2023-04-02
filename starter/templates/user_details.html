@@ -8,5 +8,19 @@
 <p>
     {{ user.email }}
 </p>
+<ul>
+{% for rating in user.ratings %}
+    <li>
+        {{ rating.movie.title }}:
+        <span class=rating_num_{{ rating.rating_id }}>
+            {{ rating.score }}
+        </span>
+        {% if session["user_email"] == user.email %}
+        <button class="edit-movie-rating" id={{ rating.rating_id }}> Edit rating </button>
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
 
+<script src="/static/js/updateRatings.js"></script>
 {% endblock %}
